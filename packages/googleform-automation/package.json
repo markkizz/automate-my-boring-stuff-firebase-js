@@ -1,0 +1,12 @@
+{
+  "name": "googleform-automation",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node ./index.js"
+  },
+  "dependencies": {
+    "googleform-client": "github:automate-my-boring-stuff-js"
+  }
+}
