@@ -8,9 +8,11 @@
     "lib": [
       "ES2017",
       "es2015",
-      "es6"
+      "es6",
+      "DOM",
+      "DOM.Iterable"
     ],
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "declaration": true,
     "typeRoots": ["./node_modules/@types"],
     "moduleResolution": "node",
@@ -19,14 +21,10 @@
     "esModuleInterop": true,
     "removeComments": false,
     "noUnusedLocals": true,
-    "noUnusedParameters": false,
-    "paths": {
-      "*": ["types/*"],
-      "app/*": ["./src/*"]
-    }
+    "noUnusedParameters": false
   },
   "include": [
-    "./src/**/*",
+    "./packages/**/*.ts",
   ],
   "exclude": ["node_modules/**/*.d.ts", "**/*.spec.ts", "**/*.test.*", "./dist/**/*"]
 }

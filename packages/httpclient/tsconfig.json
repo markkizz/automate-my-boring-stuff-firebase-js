@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "ES6",
+    "module": "CommonJS",
     "target": "ES2017",
     "noImplicitAny": true,
     "outDir": "./dist",
@@ -22,8 +22,17 @@
     "noUnusedParameters": false,
     "paths": {
       "*": ["types/*"],
-      "app/*": ["./src/*"]
-    }
+      "@/*": ["./src/*"]
+    },
+    "plugins": [
+      { "transform": "typescript-transform-paths", "useRootDirs": true },
+      {
+        "transform": "typescript-transform-paths",
+        "useRootDirs": true,
+        "afterDeclarations": true,
+        "exclude": [ "**/node_modules/**" ]
+      }
+    ],
   },
   "include": [
     "./src/**/*",
