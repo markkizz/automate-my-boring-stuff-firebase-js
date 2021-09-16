@@ -1,16 +1,12 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "CommonJS",
     "target": "ES2017",
     "noImplicitAny": true,
     "outDir": "./dist",
     "sourceMap": true,
-    "lib": [
-      "ES2017",
-      "es2015",
-      "es6"
-    ],
-    "baseUrl": "./src",
+    "lib": ["ES2017", "es2015", "es6", "es2018", "dom"],
+    "baseUrl": ".",
     "declaration": true,
     "typeRoots": ["./node_modules/@types"],
     "moduleResolution": "node",
@@ -22,10 +18,21 @@
     "noUnusedParameters": false,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "plugins": [
+      { "transform": "typescript-transform-paths", "useRootDirs": true },
+      {
+        "transform": "typescript-transform-paths",
+        "useRootDirs": true,
+        "afterDeclarations": true,
+        "exclude": [ "**/node_modules/**" ]
+      }
+    ],
   },
-  "include": [
-    "./src/**/*",
-  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "require": ["typescript-transform-paths/register"]
+  },
+  "include": ["./src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.*", "./dist/**/*"]
 }
