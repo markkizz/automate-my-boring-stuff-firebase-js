@@ -10,7 +10,7 @@
       "es2015",
       "es6"
     ],
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "declaration": true,
     "typeRoots": ["./node_modules/@types"],
     "moduleResolution": "node",
