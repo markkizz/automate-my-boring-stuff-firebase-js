@@ -8,7 +8,7 @@ export enum WorkinStatus {
 
 export async function meanGoogleFormAutomation(workingStatus: WorkinStatus = WorkinStatus.In) {
   console.log(`------------ Begining Mean Automation @${new Date().toLocaleString()}-------------`)
-  const browser = await puppeteer.launch({ headless: false, slowMo: 250 })
+  const browser = await puppeteer.launch({ headless: true, slowMo: 250 })
   const page = await browser.newPage()
   try {
     await page.goto("https://docs.google.com/forms/d/e/1FAIpQLSfixHCPJAibiKvt1trmklhwIOENLiaayUg8ewr1K3dO8ViW5Q/viewform?usp=sf_link", {
