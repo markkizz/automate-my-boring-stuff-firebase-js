@@ -2,7 +2,10 @@
   "name": "@automation/root",
   "private": true,
   "scripts": {
-    "prepare": "lerna run build"
+    "prepare": "lerna run build",
+    "build": "lerna run build",
+    "publish:registry": "lerna bootstrap && lerna run publish:registry",
+    "deploy": "lerna run deploy"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.31.1",
@@ -13,6 +16,12 @@
   "workspaces": {
     "packages": [
       "packages/**"
+    ],
+    "nohoist": [
+      "**/firebase-admin",
+      "**/firebase-admin/**",
+      "**/firebase-functions",
+      "**/firebase-functions/**"
     ]
   }
 }

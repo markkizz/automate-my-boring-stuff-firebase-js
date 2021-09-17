@@ -3,10 +3,6 @@
   "version": "0.0.1",
   "main": "./dist/index.js",
   "license": "MIT",
-  "files": [
-    "./bin/*",
-    "./lib/*"
-  ],
   "typings": "./dist/index.d.ts",
   "scripts": {
     "prepare": "yarn run clean && yarn run build",

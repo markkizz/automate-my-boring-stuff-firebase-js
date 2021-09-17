@@ -1,13 +1,21 @@
 {
-  "name": "@automation/httpclient",
+  "name": "@markkizz/httpclient",
   "version": "0.0.1",
   "main": "./dist/index.js",
   "license": "MIT",
   "typings": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "ssh://github.com/markkizz/automate-my-boring-stuff-js.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "prepare": "yarn run clean && yarn run build",
     "build": "cross-env NODE_ENV=production ttsc -p .",
-    "clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist",
+    "publish:registry": "yarn publish"
   },
   "dependencies": {
     "axios": "^0.21.4",

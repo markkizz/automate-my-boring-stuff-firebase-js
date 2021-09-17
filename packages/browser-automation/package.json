@@ -1,13 +1,21 @@
 {
-  "name": "@automation/googleform-automation",
-  "version": "0.0.1",
+  "name": "@markkizz/browser-automation",
+  "version": "0.0.2",
   "main": "./dist/index.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://github.com/markkizz/automate-my-boring-stuff-js.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "prepare": "yarn run clean && yarn run build",
     "dev:bot": "nodemon --watch \"**/*\" -e ts,tsx --exec ts-node --transpile-only -r tsconfig-paths/register ./src/index.ts",
     "build": "cross-env NODE_ENV=production ttsc -p .",
-    "clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist",
+    "publish:registry": "yarn publish"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
